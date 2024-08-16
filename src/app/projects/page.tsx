@@ -5,7 +5,7 @@ import { GoArrowUpRight } from "react-icons/go";
 
 export default function Projects() {
   return (
-    <main className="w-full bg-zinc-800 p-4">
+    <main className="w-full bg-zinc-800 p-4 text-white">
       <h1 className="text-3xl font-bold text-center mb-8">Projects</h1>
       {/* First one */}
       <div className="flex flex-col md:flex-row items-center md:items-start md:mx-32 lg:mx-64 my-10 p-10 rounded-lg bg-zinc-900">
