@@ -5,7 +5,7 @@ import { GoArrowDown} from 'react-icons/go';
 export default function Page() {
   return (
     <div className="h-screen w-screen sm:bg-none text-white">
-      <div className="absolute inset-0 blur-sm bg-black opacity-20 sm:hidden">
+      <div className="absolute inset-0 blur-sm bg-black opacity-60 sm:hidden">
         <Image src="/IMG_6960(2).jpg" alt="Background" fill={true} quality={100} className="z-0 object-cover" />
       </div>
       <div className="flex flex-col justify-center items-center h-full text-center sm:flex-row sm:justify-between sm:text-center">

@@ -56,16 +56,22 @@ export default function About() {
           />
         </div>
         <div className="mt-4 flex flex-col sm:flex-row gap-4">
-          <button className="transition ease-in-out font-bold text-white py-2 px-4 rounded hover:bg-white hover:text-black">
-            <Link href="/about">About Me</Link>
-              
+          <Link href="/about">
+            <button className="transition ease-in-out font-bold text-white py-2 px-4 rounded hover:bg-white hover:text-black">
+                <p>About Me</p>
               </button>
+          </Link>
+          <Link href="/projects">
           <button className="transition ease-in-out font-bold text-white py-2 px-4 rounded hover:bg-white hover:text-black">
-            <Link href="/projects">Projects</Link>
+            <p>Projects</p>
           </button>
+          </Link>
+          <Link href="/contact">
           <button className="transition ease-in-out font-bold text-white py-2 px-4 rounded hover:bg-white hover:text-black">
-            <Link href="/contact">Contact</Link>
+            <p>Contact</p>
           </button>
+          </Link>
+          
         </div>
       </div>
     </main>
