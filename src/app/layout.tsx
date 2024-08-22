@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Comfortaa} from "next/font/google";
 import Footer from "./components/Footer";
 import "./globals.css";
+import Script from "next/script"
 
 const comfortaa = Comfortaa({ subsets: ["latin"] });
 
@@ -16,7 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
+      <Script>
+      localStorage.theme = 'dark'
+
+      </Script>
       <body className={comfortaa.className}>{children}
       <Footer />
       </body>
