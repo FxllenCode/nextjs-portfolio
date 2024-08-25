@@ -17,9 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <Script>
-      localStorage.theme = 'dark'
+    <html lang="en">
+      <Script>{"localStorage.theme = 'dark'"}
+      
 
       </Script>
       <body className={comfortaa.className}>{children}

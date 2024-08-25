@@ -9,7 +9,7 @@ export default function About() {
     <main className="relative flex min-h-screen flex-col items-center justify-center p-24 overflow-hidden">
       <div className="absolute inset-0 blur-sm">
         <Image
-          src="/IMG_0044.jpg"
+          src="/assets/index/IMG_0044.jpg"
           alt="Background"
           fill={true}
           quality={100}

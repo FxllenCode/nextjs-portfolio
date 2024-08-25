@@ -5,11 +5,11 @@ export default function Page() {
   return (
     <div className="h-screen w-screen sm:bg-none text-white">
       <div className="absolute inset-0 blur-sm bg-black opacity-10 sm:hidden">
-        <Image src="/IMG_8498-Edit-2.jpg" alt="Background" fill={true} quality={100} className="z-0 object-cover" />
+        <Image src="/assets/contact/IMG_8498-Edit-2.jpg" alt="Background" fill={true} quality={100} className="z-0 object-cover" />
       </div>
       <div className="flex flex-col justify-center items-center h-full text-center sm:flex-row sm:justify-between sm:text-center">
       <div className="hidden sm:block sm:relative  sm:object-cover sm:w-1/2 sm:h-full">
-          <Image src="/IMG_8498-Edit-2.jpg" alt="Image" fill={true} quality={100}  className="z-0 object-cover"
+          <Image src="/assets/contact/IMG_8498-Edit-2.jpg" alt="Image" fill={true} quality={100}  className="z-0 object-cover"
  />
         </div>
         <div className="z-20 sm:z-0 p-4 sm:w-1/2 sm:h-full sm:flex sm:flex-col sm:justify-center sm:bg-zinc-900 sm:bg-opacity-75">

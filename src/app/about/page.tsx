@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <div className="h-screen w-screen sm:bg-none text-white dark">
       <div className="dark absolute inset-0 blur-sm dark:bg-zinc-600 opacity-60 sm:hidden">
-        <Image src="/IMG_6960(2).jpg" alt="Background" fill={true} quality={100} className="z-0 object-cover" />
+        <Image src="/assets/about/IMG_6960(2).jpg" alt="Background" fill={true} quality={100} className="z-0 object-cover" />
       </div>
       <div className="flex flex-col justify-center items-center h-full text-center sm:flex-row sm:justify-between sm:text-center">
         <div className="z-20 sm:z-0 p-4 sm:w-1/2 sm:h-full sm:flex sm:flex-col sm:justify-center dark:sm:bg-zinc-600 sm:bg-opacity-75">
@@ -17,7 +17,7 @@ export default function Page() {
           </div>
 
           <span className="transition ease-in-out hover:underline font-bold text-xl mt-5 text-blue-500 group">
-            <Link href="/Resume.pdf" target="_blank" download={true}>
+            <Link href="/assets/about/Resume.pdf" target="_blank" download={true}>
                 <p className="group-hover:underline inline-flex items-center">
                     Resume
                     <GoArrowDown className="inline transition ease-in-out group-hover:translate-x-1 ml-1" />
@@ -26,7 +26,7 @@ export default function Page() {
         </span>
         </div>
         <div className="hidden sm:block sm:relative  sm:object-cover sm:w-1/2 sm:h-full">
-          <Image src="/IMG_6960(2).jpg" alt="Image" fill={true} quality={100}  className="z-0 object-cover"
+          <Image src="/assets/about/IMG_6960(2).jpg" alt="Image" fill={true} quality={100}  className="z-0 object-cover"
  />
         </div>
       </div>

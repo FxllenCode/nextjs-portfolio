@@ -10,7 +10,7 @@ export default function Projects() {
       {/* First one */}
       <div className="flex flex-col md:flex-row items-center md:items-start md:mx-32 lg:mx-64 my-10 p-10 rounded-lg bg-zinc-900">
         <div className="w-full md:w-1/2 mb-4 md:mx-5 md:mb-0">
-          <Image src="/Banner.png" alt="Status+" width={250} height={150} className="w-full h-auto" />
+          <Image src="/assets/projects/Banner.png" alt="Status+" width={650} height={250} className="object-none" />
         </div>
         <div className="w-full md:w-1/2 md:mx-5 md:pl-4">
           <h2 className="text-2xl font-semibold mb-2">Status+</h2>
@@ -25,7 +25,7 @@ export default function Projects() {
       {/* Second one */}
       <div className="flex flex-col md:flex-row items-center md:items-start md:mx-32 lg:mx-64 my-10 p-10 rounded-lg bg-zinc-900">
         <div className="w-full md:w-1/2 mb-4 md:mx-5 md:mb-0">
-          <Image src="/PXL_20240711_165216659~2.jpg" alt="Pi25-SDR" width={250} height={150} className="w-full h-auto" />
+          <Image src="/assets/projects/PXL_20240711_165216659~2.jpg" alt="Pi25-SDR" width={250} height={150} className="w-full h-auto" />
         </div>
         <div className="w-full md:w-1/2 md:mx-5 md:pl-4">
           <h2 className="text-2xl font-semibold mb-2">FultonScanner.com & Pi25-Scanner-SDR</h2>
@@ -39,7 +39,7 @@ export default function Projects() {
       {/* Third one */}
       <div className="flex flex-col md:flex-row items-center md:items-start md:mx-32 lg:mx-64 my-10 p-10 rounded-lg bg-zinc-900">
         <div className="w-full md:w-1/2 mb-4 md:mx-5 md:mb-0">
-          <Image src="/firefox_R8ZSTRJR3F.png" alt="Pi25-SDR" width={250} height={150} className="w-full h-auto" />
+          <Image src="/assets/projects/firefox_R8ZSTRJR3F.png" alt="Pi25-SDR" width={250} height={150} className="w-full h-auto" />
         </div>
         <div className="w-full md:w-1/2 md:mx-5 md:pl-4">
           <h2 className="text-2xl font-semibold mb-2">DevOps-Rblx & Roxios</h2>
@@ -56,7 +56,7 @@ export default function Projects() {
       {/* Fourth one */}
       <div className="flex flex-col md:flex-row items-center md:items-start md:mx-32 lg:mx-64 my-10 p-10 rounded-lg bg-zinc-900">
         <div className="w-full md:w-1/2 mb-4 md:mx-5 md:mb-0">
-          <Image src="/firefox_jaO76BohPA.png" alt="Pi25-SDR" width={250} height={150} className="w-full h-auto" />
+          <Image src="/assets/projects/firefox_jaO76BohPA.png" alt="Pi25-SDR" width={250} height={150} className="w-full h-auto" />
         </div>
         <div className="w-full md:w-1/2 md:mx-5 md:pl-4">
           <h2 className="text-2xl font-semibold mb-2">APCSP & APCSA Notes/Projects</h2>
