@@ -8,7 +8,7 @@ const Footer = () => {
   const pathName = usePathname()
   if (pathName == '/') {
     return (
-      <footer className="bg-neutral-900 backdrop-blur bg-opacity-80 text-white py-6 fixed w-full bottom-0  p-3">
+      <footer className="bg-neutral-900 backdrop-blur bg-opacity-80 text-white py-6 fixed w-full bottom-0 p-3">
         <div className="container  mx-auto flex justify-between items-center">
           <div>
             <Link href="/">
@@ -29,8 +29,9 @@ const Footer = () => {
         </div>
       </footer>
     );
-  } else {
+  
     // topbar here, make navigation super easy and clear 
+    
   }
   
 };

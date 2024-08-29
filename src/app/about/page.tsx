@@ -4,12 +4,13 @@ import { GoArrowDown} from 'react-icons/go';
 
 export default function Page() {
   return (
-    <div className="h-screen w-screen sm:bg-none text-white dark">
-      <div className="dark absolute inset-0 blur-sm dark:bg-zinc-600 opacity-60 sm:hidden">
+    <main className="h-screen overflow-hidden">
+      <div className="h-screen w-screen sm:bg-none text-white dark overflow-hidden overscroll-none">
+      <div className="dark absolute inset-0 blur-sm bg-zinc-800 opacity-60 sm:hidden">
         <Image src="/assets/about/IMG_6960(2).jpg" alt="Background" fill={true} quality={100} className="z-0 object-cover" />
       </div>
       <div className="flex flex-col justify-center items-center h-full text-center sm:flex-row sm:justify-between sm:text-center">
-        <div className="z-20 sm:z-0 p-4 sm:w-1/2 sm:h-full sm:flex sm:flex-col sm:justify-center dark:sm:bg-zinc-600 sm:bg-opacity-75">
+        <div className="z-20 sm:z-0 p-4 sm:w-1/2 sm:h-full sm:flex sm:flex-col sm:justify-center sm:bg-zinc-800 sm:bg-opacity-75">
           <h1 className="text-4xl font-bold mb-4">About Me</h1>
           <div className="text-md sm:text-lg whitespace-pre-line">Hello! I'm Ethan, but you may know me by fallen or FxllenCode. I create things for the internet that are sometimes cool, but mostly useless for anyone other than myself! I'm fluent in JavaScript, TypeScript, HTML, and CSS. I'm proficent in Rust, Lua, Java, and Python. I have extensive experience working with Node.js, Express.js, Next.Js, and React apps, but I have worked with many other industry standard tools as well. 
           {"\n\n"}
@@ -31,5 +32,7 @@ export default function Page() {
         </div>
       </div>
     </div>
+    </main>
+    
   );
 }

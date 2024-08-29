@@ -6,7 +6,7 @@ import { GoArrowUpRight } from "react-icons/go";
 export default function Projects() {
   return (
     <main className="w-full bg-zinc-800 p-4 text-white">
-      <h1 className="text-3xl font-bold text-center mb-8">Projects</h1>
+      <h1 className="text-3xl font-bold text-center mb-8 m-24">Projects</h1>
       {/* First one */}
       <div className="flex flex-col md:flex-row items-center md:items-start md:mx-32 lg:mx-64 my-10 p-10 rounded-lg bg-zinc-900">
         <div className="w-full md:w-1/2 mb-4 md:mx-5 md:mb-0">
@@ -31,7 +31,7 @@ export default function Projects() {
           <h2 className="text-2xl font-semibold mb-2">FultonScanner.com & Pi25-Scanner-SDR</h2>
           <p className="mb-4">FultonScanner and Pi25 SDR was a project I started working on in 2024 out of interest in radio communcations and public safety in my area. I wanted a scanner, but the cost of one that supports digital radio was over $650! Instead, I used Raspberry Pi, Ubuntu, and multiple other open-source softwares to create my own scanner that not just creates an awesome looking device, but a site to allow others from around the world to listen in. I am currently working on a writeup on how I created the physical device and the custom scripts I created to make it work seamlessly. FultonScanner.com is the public portal for my scanner. It currently only listens to NFRRSA, though I plan on adding Fulton County P25 in the near future.</p>
           <div className="flex flex-col text-center md:text-left md:flex-row lg:space-x-4">
-            <CustomSend url="fultonscanner.com" text="FultonScanner.com"/>
+            <CustomSend url="https://fultonscanner.com" text="FultonScanner.com"/>
             <CustomSend url="https://github.com/FxllenCode/Pi25-Scanner-SDR" text="Pi25-Scanner-SDR Github (WIP)"/>
           </div>
         </div>

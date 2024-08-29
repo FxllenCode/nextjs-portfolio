@@ -56,7 +56,7 @@ export default function About() {
           />
         </div>
         <div className="mt-4 flex flex-col sm:flex-row gap-4">
-          <Link href="/about">
+          <Link href="/about" scroll={false}>
             <button className="transition ease-in-out font-bold text-white py-2 px-4 rounded hover:bg-white hover:text-black">
                 <p>About Me</p>
               </button>
