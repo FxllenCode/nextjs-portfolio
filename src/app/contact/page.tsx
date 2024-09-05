@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Page() {
   return (
     <div className="h-screen w-screen sm:bg-none text-white">
-      <div className="absolute inset-0 blur-sm bg-black opacity-10 sm:hidden">
+      <div className="absolute inset-0 blur-sm bg-black opacity-20 sm:hidden">
         <Image src="/assets/contact/IMG_8498-Edit-2.jpg" alt="Background" fill={true} quality={100} className="z-0 object-cover" />
       </div>
       <div className="flex flex-col justify-center items-center h-full text-center sm:flex-row sm:justify-between sm:text-center">
