@@ -25,10 +25,13 @@ export function PostSmall({
   return (
     <div className="m-12 p-10 rounded-lg bg-black">
       <div className="mb-5">
+        <Link href={`/blog/${slug}`}>
         <Image src={coverImage} alt={title} width={650} height={315} className="object-contain w-full"></Image>
+
+        </Link>
       </div>
       <h3 className="text-3xl mb-3 leading-snug">
-        <Link href={`/posts/${slug}`} className="hover:underline">
+        <Link href={`/blog/${slug}`} className="hover:underline">
           {title}
         </Link>
       </h3>

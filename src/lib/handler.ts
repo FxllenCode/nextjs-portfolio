@@ -29,7 +29,8 @@ export function getAllPosts(): Post[] {
   return posts;
 }
 
-export default async function markdownToHtml(markdown: string): Promise<string> {
+export async function markdownToHtml(markdown: string): Promise<string> { // might not be needed - check typography docs
   const result = await remark().use(html).process(markdown);
   return result.toString();
 }
+
