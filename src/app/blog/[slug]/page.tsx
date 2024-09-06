@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug, markdownToHtml } from "../../../lib/handler";
 import Link from "next/link";
 import Image from "next/image";
+import { parseISO, format } from "date-fns";
+
 
 
 
@@ -23,30 +25,28 @@ type Params = {
     }
   
     const content = await markdownToHtml(post.content || "");
+    const dateParsed = parseISO(post.date);
+
   
     return (
-      <main className="bg-zinc-900 mx-auto h-full w-full">
-        <div className="container mx-auto px-5 w-full ">
-            <article className="mb-32">
-            <div className="items-center mx-auto">
-                <div className="prose  prose-zinc prose-invert"/>
-                    <div className="prose lg:prose-xl prose-zinc prose-invert" dangerouslySetInnerHTML={{ __html: content }}></div>
-                </div>
+      <main className="bg-zinc-800 w-full h-full">
+        <div className="container flex items-center justify-center mx-auto">
+            <article className="mb-32 mx-4">
+              <h1 className="pt-32 text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">{post.title}</h1>
+              <i className="text-md mb-4"><time dateTime={post.date}>{format(dateParsed, "LLLL	d, yyyy")}</time></i>
+              <Image
+                src={post.coverImage}
+                alt={`Cover Image for ${post.title}`}
+      width={1300}
+      height={630}
+    />
+              <div className="prose prose-zinc prose-invert lg:prose-xl mx-auto">
+                <div dangerouslySetInnerHTML={{ __html: content }}/>
+
+              </div>
+
             </article>
-        </div>
-        {/* <Alert preview={post.preview} />
-        <Container>
-          <Header />
-          <article className="mb-32">
-            <PostHeader
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-            />
-            <PostBody content={content} />
-          </article>
-        </Container> */}
+          </div>
       </main>
     );
   }
@@ -61,3 +61,11 @@ type Params = {
       slug: post.slug,
     }));
   }
+
+
+  // <div className="items-center mx-auto">
+  // <div className="prose  prose-zinc prose-invert">
+  // {/* <div className="prose lg:prose-xl prose-zinc prose-invert" dangerouslySetInnerHTML={{ __html: content }} /> */}
+    
+// </div>
+// </div>

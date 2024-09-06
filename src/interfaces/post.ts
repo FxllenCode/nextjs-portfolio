@@ -7,5 +7,7 @@ export type Post = {
     ogImage: {
         url: string;
     };
+    tags: Array<string>;
     content: string;
+
 };
