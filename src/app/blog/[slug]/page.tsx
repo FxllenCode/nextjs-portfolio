@@ -32,9 +32,10 @@ type Params = {
       <main className="bg-zinc-800 w-full h-full">
         <div className="container flex items-center justify-center mx-auto">
             <article className="mb-32 mx-4">
-              <h1 className="pt-32 text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">{post.title}</h1>
+              <h1 className="pt-32 text-4xl md:text-6xl lg:text-7xl font-bold font-black tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">{post.title}</h1>
               <i className="text-md mb-4"><time dateTime={post.date}>{format(dateParsed, "LLLL	d, yyyy")}</time></i>
               <Image
+                className="rounded"
                 src={post.coverImage}
                 alt={`Cover Image for ${post.title}`}
       width={1300}

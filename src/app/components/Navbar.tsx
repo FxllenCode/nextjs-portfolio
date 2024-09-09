@@ -22,22 +22,25 @@ const Navbar = () => {
               <p className="text-xl font-bold transition ease-in-out hover:opacity-30">fxllencode.dev</p>
             </Link>
           </div>
-          <div className='hidden sm:flex items-center content-center'>
+          <div className='hidden md:flex items-center content-center'>
             <div className="flex space-x-4 mr-4">
               <Link href="/" passHref>
-                <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/' ? 'font-black text-blue-500' : ''}`}>Home</p>
+                <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/' ? 'opacity-30' : ''}`}>Home</p>
               </Link>
               <Link href="/about" passHref>
-                <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/about' ? 'font-black text-blue-500' : ''}`}>About Me</p>
+                <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/about' ? 'opacity-30' : ''}`}>About Me</p>
               </Link>
               <Link href="/projects" passHref>
-                <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/projects' ? 'font-black text-blue-500' : ''}`}>Projects</p>
+                <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/projects' ? 'opacity-30' : ''}`}>Projects</p>
+              </Link>
+              <Link href="/blog" passHref>
+                <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/blog' ? 'opacity-30' : ''}`}>Blog</p>
               </Link>
               <Link href="/contact" passHref>
-                <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/contact' ? 'font-black text-blue-500' : ''}`}>Contact</p>
+                <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/contact' ? 'opacity-30' : ''}`}>Contact</p>
               </Link>
             </div>
-            <div className="flex hidden sm:flex space-x-4">
+            <div className="flex hidden md:flex space-x-4">
               <Link href="https://twitter.com/fxllencode" target="_blank" rel="noopener noreferrer">
                 <FaTwitter className="text-2xl bg-clip-text transition ease-in-out hover:text-[#26a7de] hover:scale-125" />
               </Link>
@@ -46,14 +49,14 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-          <div className="sm:hidden flex items-center">
+          <div className="md:hidden flex items-center">
             <button onClick={toggleMenu}>
               {menuOpen ? <FaTimes className="text-2xl " /> : <FaBars className="text-2xl " />}
             </button>
           </div>
         </div>
         {menuOpen && (
-          <div className="sm:hidden flex flex-col items-center bg-neutral-900 text-white w-full py-4 mt-8">
+          <div className="md:hidden flex flex-col items-center bg-neutral-900 text-white w-full py-4 mt-8">
             <Link href="/" passHref>
               <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/' ? 'font-black text-blue-500' : ''}`}>Home</p>
             </Link>
@@ -62,6 +65,9 @@ const Navbar = () => {
             </Link>
             <Link href="/projects" passHref>
               <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/projects' ? 'font-black text-blue-500' : ''}`}>Projects</p>
+            </Link>
+            <Link href="/blog" passHref>
+              <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/blog' ? 'font-black text-blue-500' : ''}`}>Blog</p>
             </Link>
             <Link href="/contact" passHref>
               <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/contact' ? 'font-black text-blue-500' : ''}`}>Contact</p>
