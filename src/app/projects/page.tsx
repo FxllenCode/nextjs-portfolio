@@ -60,7 +60,7 @@ export default function Projects() {
         </div>
         <div className="w-full md:w-1/2 md:mx-5 md:pl-4">
           <h2 className="text-2xl font-semibold mb-2">APCSP & APCSA Notes/Projects</h2>
-          <p className="mb-4">After taking and passing both AP Computer Science Principles and AP Computer Science Applications, I decided to publish my notes and sample programs I wrote for the classes I took. I have not filtered through any of it nor is it tailored to be a study guide, but you can use it as a reference or however you find fit. It's fully open source. </p>
+          <p className="mb-4">After taking and passing both AP Computer Science Principles and AP Computer Science Applications, I decided to publish my notes and sample programs I wrote for the classes I took. I have not filtered through any of it nor is it tailored to be a study guide, but you can use it as a reference or however you find fit. It&apos;s fully open source. </p>
           <div className="flex flex-col text-center md:text-left md:flex-row lg:space-x-4 md:flex-wrap">
             <CustomSend url="https://github.com/FxllenCode/APCSPWork" text="APCSP Github"/>
             <CustomSend url="https://github.com/FxllenCode/APCSA" text="APCSA Github"/>

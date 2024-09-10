@@ -58,19 +58,19 @@ const Navbar = () => {
         {menuOpen && (
           <div className="md:hidden flex flex-col items-center bg-neutral-900 text-white w-full py-4 mt-8">
             <Link href="/" passHref>
-              <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/' ? 'font-black text-blue-500' : ''}`}>Home</p>
+              <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/' ? 'opacity-30' : ''}`}>Home</p>
             </Link>
             <Link href="/about" passHref>
-              <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/about' ? 'font-black text-blue-500' : ''}`}>About Me</p>
+              <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/about' ? 'opacity-30' : ''}`}>About Me</p>
             </Link>
             <Link href="/projects" passHref>
-              <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/projects' ? 'font-black text-blue-500' : ''}`}>Projects</p>
+              <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/projects' ? 'opacity-30' : ''}`}>Projects</p>
             </Link>
             <Link href="/blog" passHref>
-              <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/blog' ? 'font-black text-blue-500' : ''}`}>Blog</p>
+              <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/blog' ? 'opacity-30' : ''}`}>Blog</p>
             </Link>
             <Link href="/contact" passHref>
-              <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/contact' ? 'font-black text-blue-500' : ''}`}>Contact</p>
+              <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/contact' ? 'opacity-30' : ''}`}>Contact</p>
             </Link>
             <div className="flex space-x-4 mt-4">
               <Link href="https://twitter.com/fxllencode" target="_blank" rel="noopener noreferrer">

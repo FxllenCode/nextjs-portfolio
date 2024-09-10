@@ -24,7 +24,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <Script>{"localStorage.theme = 'dark'"}
+      <Script id="thiswasfortestingbutidontwanttohaveproblems">{"localStorage.theme = 'dark'"}
       
 
       </Script>

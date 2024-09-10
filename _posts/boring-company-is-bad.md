@@ -1,10 +1,10 @@
 ---
 title: "The Boring Company's Las Vegas Loop is a terrible project."
 excerpt: "Adding public transit is rarely a bad thing in the United States. Somehow, Elon Musk managed to ruin it for Las Vegas, creating argubly the worst form of public tranit imaginable. I'll dive into the problems it has and why further development on new tunnels should be halted."
-coverImage: "/assets/blog/lorem/IMG_0044.jpg"
-date: "2020-03-16T05:35:07.322Z"
+coverImage: "/assets/blog/boring-company-is-bad/vegasloop.jpg"
+date: "2024-09-10T05:35:07.322Z"
 ogImage:
-  url: "/assets/blog/lorem/IMG_0044.jpg"
+  url: "/assets/blog/boring-company-is-bad/vegasloop.jpg"
 tags: ["elon musk,", "transit"]
 ---
 
