@@ -9,7 +9,7 @@ export default function About() {
     <main className="relative flex min-h-screen flex-col items-center justify-center p-24 overflow-hidden">
       <div className="absolute inset-0 blur-sm">
         <Image
-          src="/IMG_0044.jpg"
+          src="/assets/index/IMG_0044.jpg"
           alt="Background"
           fill={true}
           quality={100}
@@ -56,7 +56,7 @@ export default function About() {
           />
         </div>
         <div className="mt-4 flex flex-col sm:flex-row gap-4">
-          <Link href="/about">
+          <Link href="/about" scroll={false}>
             <button className="transition ease-in-out font-bold text-white py-2 px-4 rounded hover:bg-white hover:text-black">
                 <p>About Me</p>
               </button>
@@ -64,6 +64,11 @@ export default function About() {
           <Link href="/projects">
           <button className="transition ease-in-out font-bold text-white py-2 px-4 rounded hover:bg-white hover:text-black">
             <p>Projects</p>
+          </button>
+          </Link>
+          <Link href="/blog">
+          <button className="transition ease-in-out font-bold text-white py-2 px-4 rounded hover:bg-white hover:text-black">
+            <p>Blog</p>
           </button>
           </Link>
           <Link href="/contact">

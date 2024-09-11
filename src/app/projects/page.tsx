@@ -6,11 +6,11 @@ import { GoArrowUpRight } from "react-icons/go";
 export default function Projects() {
   return (
     <main className="w-full bg-zinc-800 p-4 text-white">
-      <h1 className="text-3xl font-bold text-center mb-8">Projects</h1>
+      <h1 className="text-3xl font-bold text-center mb-8 m-24">Projects</h1>
       {/* First one */}
       <div className="flex flex-col md:flex-row items-center md:items-start md:mx-32 lg:mx-64 my-10 p-10 rounded-lg bg-zinc-900">
         <div className="w-full md:w-1/2 mb-4 md:mx-5 md:mb-0">
-          <Image src="/Banner.png" alt="Status+" width={250} height={150} className="w-full h-auto" />
+          <Image src="/assets/projects/Banner.png" alt="Status+" width={650} height={250} className="object-none" />
         </div>
         <div className="w-full md:w-1/2 md:mx-5 md:pl-4">
           <h2 className="text-2xl font-semibold mb-2">Status+</h2>
@@ -25,13 +25,13 @@ export default function Projects() {
       {/* Second one */}
       <div className="flex flex-col md:flex-row items-center md:items-start md:mx-32 lg:mx-64 my-10 p-10 rounded-lg bg-zinc-900">
         <div className="w-full md:w-1/2 mb-4 md:mx-5 md:mb-0">
-          <Image src="/PXL_20240711_165216659~2.jpg" alt="Pi25-SDR" width={250} height={150} className="w-full h-auto" />
+          <Image src="/assets/projects/PXL_20240711_165216659~2.jpg" alt="Pi25-SDR" width={250} height={150} className="w-full h-auto" />
         </div>
         <div className="w-full md:w-1/2 md:mx-5 md:pl-4">
           <h2 className="text-2xl font-semibold mb-2">FultonScanner.com & Pi25-Scanner-SDR</h2>
           <p className="mb-4">FultonScanner and Pi25 SDR was a project I started working on in 2024 out of interest in radio communcations and public safety in my area. I wanted a scanner, but the cost of one that supports digital radio was over $650! Instead, I used Raspberry Pi, Ubuntu, and multiple other open-source softwares to create my own scanner that not just creates an awesome looking device, but a site to allow others from around the world to listen in. I am currently working on a writeup on how I created the physical device and the custom scripts I created to make it work seamlessly. FultonScanner.com is the public portal for my scanner. It currently only listens to NFRRSA, though I plan on adding Fulton County P25 in the near future.</p>
           <div className="flex flex-col text-center md:text-left md:flex-row lg:space-x-4">
-            <CustomSend url="fultonscanner.com" text="FultonScanner.com"/>
+            <CustomSend url="https://fultonscanner.com" text="FultonScanner.com"/>
             <CustomSend url="https://github.com/FxllenCode/Pi25-Scanner-SDR" text="Pi25-Scanner-SDR Github (WIP)"/>
           </div>
         </div>
@@ -39,7 +39,7 @@ export default function Projects() {
       {/* Third one */}
       <div className="flex flex-col md:flex-row items-center md:items-start md:mx-32 lg:mx-64 my-10 p-10 rounded-lg bg-zinc-900">
         <div className="w-full md:w-1/2 mb-4 md:mx-5 md:mb-0">
-          <Image src="/firefox_R8ZSTRJR3F.png" alt="Pi25-SDR" width={250} height={150} className="w-full h-auto" />
+          <Image src="/assets/projects/firefox_R8ZSTRJR3F.png" alt="Pi25-SDR" width={250} height={150} className="w-full h-auto" />
         </div>
         <div className="w-full md:w-1/2 md:mx-5 md:pl-4">
           <h2 className="text-2xl font-semibold mb-2">DevOps-Rblx & Roxios</h2>
@@ -56,11 +56,11 @@ export default function Projects() {
       {/* Fourth one */}
       <div className="flex flex-col md:flex-row items-center md:items-start md:mx-32 lg:mx-64 my-10 p-10 rounded-lg bg-zinc-900">
         <div className="w-full md:w-1/2 mb-4 md:mx-5 md:mb-0">
-          <Image src="/firefox_jaO76BohPA.png" alt="Pi25-SDR" width={250} height={150} className="w-full h-auto" />
+          <Image src="/assets/projects/firefox_jaO76BohPA.png" alt="Pi25-SDR" width={250} height={150} className="w-full h-auto" />
         </div>
         <div className="w-full md:w-1/2 md:mx-5 md:pl-4">
           <h2 className="text-2xl font-semibold mb-2">APCSP & APCSA Notes/Projects</h2>
-          <p className="mb-4">After taking and passing both AP Computer Science Principles and AP Computer Science Applications, I decided to publish my notes and sample programs I wrote for the classes I took. I have not filtered through any of it nor is it tailored to be a study guide, but you can use it as a reference or however you find fit. It's fully open source. </p>
+          <p className="mb-4">After taking and passing both AP Computer Science Principles and AP Computer Science Applications, I decided to publish my notes and sample programs I wrote for the classes I took. I have not filtered through any of it nor is it tailored to be a study guide, but you can use it as a reference or however you find fit. It&apos;s fully open source. </p>
           <div className="flex flex-col text-center md:text-left md:flex-row lg:space-x-4 md:flex-wrap">
             <CustomSend url="https://github.com/FxllenCode/APCSPWork" text="APCSP Github"/>
             <CustomSend url="https://github.com/FxllenCode/APCSA" text="APCSA Github"/>
