@@ -1,10 +1,10 @@
 ---
 title: "Arduino Home Sensor Project Write-up"
 excerpt: "For our group project, we created an Arudino-based smart home device that provides the user with information about the enviorment such as the tempature and room humidity. It was not the easiest project to say the least. "
-coverImage: "/assets/blog/lorem/IMG_0044.jpg"
+coverImage: "/assets/blog/arduino-home-sensor/PXL_20241028_145509906.jpg"
 date: "2024-10-28T05:35:07.322Z"
 ogImage:
-  url: "/assets/blog/lorem/IMG_0044.jpg"
+  url: "/assets/blog/arduino-home-sensor/PXL_20241028_145509906.jpg"
 tags: ["arduino,", "arudino project", "iot", "smart home device"]
 ---
 
@@ -26,7 +26,107 @@ This was a project... I learned a lot and also sufferred greatly making it work.
 * [LCD1602 (Direct Download)](http://wiki.sunfounder.cc/images/b/b2/LCD1602_for_Arduino.rar)
 
 ## Failures 
-This project was defined by failure. While our original plan was bold, we ended up having to significantly downsize our project in scale after trying (and failing) to implement many other modules. 
+This project was defined by failure, so I think it's important to start there. While our original plan was bold, we ended up having to significantly downsize our project in scale after trying (and failing) to implement many other modules. 
 
 ### IR Receiver 
+The kit that we used included an IR receiever and remote control module. We planned on using this module to control what is displayed on the screen. For example, we considered using the remote to switch between different measurements such as tempature or humidity. We could have also used it to switch units from Celsius to Farenheight.
 
+However, we encoutered a lot of issues with this module. First off, there was almost no documentation with the specific module we have. I still do not know the exact model number or unit type of the module because it was not documented in the kit or on the module. This made it difficult to find answers and results for why it wasn't working. Once I finally figured out how to make the circuit, I noticed that there was a red LED on the side of the module that was lit. After doing some research, I found that indicates that the module is receiving an IR signal. However, the module should not have been receiving any signals, and there was no known interferance to my knowledge. I left it plugged in to attempt to debug it on the code side, and started to notice a smoke smell. The module was also hot to the touch. I beleive that we were sent a malfunctioning IR receiever module, and the issue was neither code or circuit, but just a bad module.
+
+### Gas Sensor and Barometric Pressure
+This was a failure for the simple reason of us not having this module on hand, and ordering the module took too long. I do not think this would be difficult to implement in the future or if you tried to add it yourself to this project, but I can't confirm as we never got to this part of the project.
+
+### DHT11 and a bad library 
+When we first got our DHT11 module on hand and began trying to get it working, we turned to Google to help us find a tutorial and circuit diagram that showed us how to implement this module. We followed [this](https://projecthub.arduino.cc/arcaegecengiz/using-dht11-12f621) tutorial. While this tutorial was fantastic and helped us figure out the circuit, there was one problem: the age of the article. We did not notice that this tutorial was written in 2018, 6 years from now. Furthermore, the library that was used in that tutorial had not been updated since 2015 (!) and only had 6 total commits. While it appeared that it worked at the time of writing the tutorial, updates to the module and Arduino itself made the module not work as intended. 
+
+We followed all sample code and used this library, and what we found was that while we would get an initial tempature/humidity reading, it would never update, even though the code would have indicated otherwise. For example, we would run the code and get a reading of 43% humidity and 22 degrees Celsius, but it would never change regardless of stimuli (such as putting a hand on the sensor or blowing on it). Frustrated, I turned to the GitHub page of the library we had downloaded. There, I realized that the library was almost 10 years old, and was no longer maintained. The GitHub issues page had multiple open issues indicating there were many unresolved issues including one that seemed similar to our error. 
+
+To solve this, I did some research into alternative libraries for the DHT11 sensor, and found an almost drag-and-drop replacement for the library: https://github.com/dhrubasaha08/DHT11. After refactoring the code, it started working as intended. 
+
+### LCD1602 :(
+This was *really* annoying to implement. First off, the circuit diagram is.. well... it's this:
+
+![really annyoing diagram](/assets/blog/arduino-home-sensor/image.png)
+
+So that was annoying. But we got it working, kind of. The kit with the LCD screen came with a potentiometer, which was needed in the diagram. However it was both poorly designed (why were the pins split in that manner?!?) and did not have the right resistance we needed, making it completely useless. So we reworked the circuit to not need a potentiometer. This worked, but it basically created this strange effect that made it so you could only read the text at a non-90 degree angle. This was annoying but at least it worked, right? 
+
+Kind of. The problem is that we did not want to make this project permanent, so we 
+
+
+
+
+
+
+
+
+
+
+
+```cpp
+#include <IRremote.hpp>
+#include <DHT11.h>
+#include <Wire.h> 
+#include <LiquidCrystal.h>
+#define IR_RECEIVE_PIN 8
+DHT11 dht11(2);
+
+int iteration = 1;
+String temperature = "";
+String humidity = "";
+String barPressure = "";
+char array1[]=" Humidity: {}             ";  //the string to print on the LCD
+char array2[]="Temperature: {}           ";  //the string to print on the LCD
+int tim = 2000;  //the value of delay time
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(4, 6, 10, 11, 12, 13);
+int previousTemp, previousHum;
+int hum = 0;
+int temp = 0;
+int bar = 0;
+
+void setup() {
+  lcd.begin(16, 2); 
+  Serial.begin(9600); 
+  int result = dht11.readTemperatureHumidity(temp, hum);
+  temp = temp * 9/5 + 32;
+  humidity = "Hum: " + String(hum);
+  temperature = "Temp:" + String(temp);
+  barPressure = "Bar: 0";
+  lcd.setCursor(0,0);
+  lcd.print(humidity);
+  lcd.setCursor(0,1);
+  lcd.print(temperature);
+  previousTemp = temp;
+  previousHum = hum;
+}
+void loop() {
+    previousTemp = temp;
+    previousHum = hum;
+    int result = dht11.readTemperatureHumidity(temp, hum);
+    temp = (temp * 9/5) + 32;
+    if (previousHum != hum) {
+      lcd.setCursor(5, 0);
+      lcd.write(String(hum)[0]);
+      if (String(temp).length() > 1) {
+        lcd.setCursor(6, 0);
+        lcd.write(String(hum)[1]);
+      }
+    }
+    if (previousTemp != temp) {
+      lcd.setCursor(5, 1);
+      lcd.write(String(temp)[0]);
+      if (String(temp).length() > 1) {
+        lcd.setCursor(6, 1);
+        lcd.write(String(temp)[1]);
+      }
+    }
+    if (result == 0) {
+      humidity = "Hum: " + String(hum);
+      temperature = "Temp:" + String(temp);
+      Serial.println("Temp:");
+      Serial.println(temp);
+      Serial.println("Hum:");
+      Serial.println(hum);
+    }
+}
+```
