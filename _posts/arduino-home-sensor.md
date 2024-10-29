@@ -22,3 +22,11 @@ This was a project... I learned a lot and also sufferred greatly making it work.
 * [Arduino IDE](https://www.arduino.cc/en/software)
 
 ## Libraries
+* [DHT11](https://github.com/dhrubasaha08/DHT11)
+* [LCD1602 (Direct Download)](http://wiki.sunfounder.cc/images/b/b2/LCD1602_for_Arduino.rar)
+
+## Failures 
+This project was defined by failure. While our original plan was bold, we ended up having to significantly downsize our project in scale after trying (and failing) to implement many other modules. 
+
+### IR Receiver 
+
