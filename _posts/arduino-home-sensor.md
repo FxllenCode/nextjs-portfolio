@@ -10,7 +10,11 @@ tags: ["arduino,", "arudino project", "iot", "smart home device"]
 
 This was a project... I learned a lot and also sufferred greatly making it work. Our goal for this project was to create a smart home device that can read tempature, humdiity, and barometric pressure from the room, and create a way of discerning and outputting the data to the user. We ended up not being able to implement a barometric pressure sensor, but we did get an LCD screen implemented (after many struggles). Below is a full write-up of how we got this project working and how you could replicate it if you so dare. 
 
-## Supplies
+## Initial Ideas and Research
+
+The intention was create a home sensor with a full suite of features, from Carbon Monoxide measuring with alarms, door sensors, gas sensors, oxygen sensors, as well as the tempature, humdiity, and barometric pressure sensors. We wanted to create a large screen interface and maybe even remote control over WiFi to make it a "true" smart home device. 
+
+### Supplies
 * [Arduino Uno R3](https://store.arduino.cc/products/arduino-uno-rev3?srsltid=AfmBOorgjUQN_I6mTssyxnmxWMVFvtd-S3LGl5Cz1NuyK4eTtcNCJOYB)
 * [Arduino Prototyping Shield + Cables](https://www.amazon.com/AIHJCNELE-Breadboard-ProtoShield-Prototyping-ATMEGA328P/dp/B0B7BSZJN7?th=1)
 * [Large Arduino Breadboard](https://www.amazon.com/EL-CP-003-Breadboard-Solderless-Distribution-Connecting/dp/B01EV6LJ7G)
@@ -18,12 +22,14 @@ This was a project... I learned a lot and also sufferred greatly making it work.
 * [LCD1602 Module](https://www.amazon.com/SunFounder-Serial-Module-Display-Arduino/dp/B071Y6JX3H)
 * [Arduino USB Connection Cable](https://store-usa.arduino.cc/products/usb-2-0-cable-type-a-b?srsltid=AfmBOopmfJ0v0nbqi-pbsx5yRw78yKXUgC4Db6zRZrEi-I0pZW8-YLaO)
 
-## Software
+### Software
 * [Arduino IDE](https://www.arduino.cc/en/software)
 
-## Libraries
+### Libraries
 * [DHT11](https://github.com/dhrubasaha08/DHT11)
 * [LCD1602 (Direct Download)](http://wiki.sunfounder.cc/images/b/b2/LCD1602_for_Arduino.rar)
+
+
 
 ## Failures 
 This project was defined by failure, so I think it's important to start there. While our original plan was bold, we ended up having to significantly downsize our project in scale after trying (and failing) to implement many other modules. 
@@ -50,18 +56,34 @@ This was *really* annoying to implement. First off, the circuit diagram is.. wel
 
 So that was annoying. But we got it working, kind of. The kit with the LCD screen came with a potentiometer, which was needed in the diagram. However it was both poorly designed (why were the pins split in that manner?!?) and did not have the right resistance we needed, making it completely useless. So we reworked the circuit to not need a potentiometer. This worked, but it basically created this strange effect that made it so you could only read the text at a non-90 degree angle. This was annoying but at least it worked, right? 
 
-Kind of. The problem is that we did not want to make this project permanent, so we 
+Kind of. The problem is that we did not want to make this project permanent, so we just used breadboards and prototyping modules to test it out and get it working. The problem with this is that the connections between the cables and data transmissions are not always a perfectly strong connection. This resulted in any tiny movement caused the LCD screen to completely break or have the text data being completely corrupted, and we would have to run the program from scratch all over again to fix it.
+
+![Corrupted](/assets/blog/arduino-home-sensor/Picture1.jpg)
+
+## What Worked
+
+### DHT11 Module (once we fixed the library)
+This was shockingly easy to use. Once we switched out the library, this module worked flawlessly. Of course, if we even moved it very slightly it would completely break, but it worked fine other than that. I would use this module again.
+
+### Prototyping Module
+This was awesome! I would suggest adding these to many arduino projects. It allowed us to easily add modules while using minimal amounts of cables, as the GND and 5V are attached right on the module and can be connected without cables. 
+
+## Real World Value
+
+.................none. At least, what we did was essentially useless and pointless. HOWEVER, the failures that we had with this project provided us with valuable feedback on how we could create better arduino projects. 
+
+While the main project was not very valuable or helpful to the user, I think we learned the most from struggling with our circuits and how they caused issues for us. We realized (too late) that the best way to go about this is to create a circuit diagram ahead of time so we have something to follow and reference as needed. 
+
+I also think working in a group made this project more difficult. The code wasn't easily sharable, and while we worked fine together, I think figuring it out/suffering at it alone would have been easier for this speciic project.
+
+## Jira Board
+
+...um I guess it got deleted? I literally cannot find it.
+
+![Jira Board](/assets/blog/arduino-home-sensor/4Capture.PNG)
 
 
-
-
-
-
-
-
-
-
-
+## Final Code 
 ```cpp
 #include <IRremote.hpp>
 #include <DHT11.h>
