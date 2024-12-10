@@ -1,7 +1,37 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { GoArrowDown} from 'react-icons/go';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: "About | fxllencode.dev",
+  description:
+    "Learn more about me here.",
+  keywords: [
+    "about",
+    "fxllencode",
+    "fxllencode.dev",
+    "Ethan Webber",
+    "portfolio",
+    "blog",
+    "developer",
+    "photographer",
+    "student",
+    "aviation"
+  ],
+  openGraph: {
+    url: "https://fxllencode.dev/about",
+    type: "website",
+    title: "About | fxllencode.dev",
+    description:
+      "Learn more about me here.",
+
+  },
+  
+  alternates: {
+    canonical: "https://fxllencode.dev/about"
+  }
+};
 export default function Page() {
   return (
     <main className="h-screen overflow-hidden">
