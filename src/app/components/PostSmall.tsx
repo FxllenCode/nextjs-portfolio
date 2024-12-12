@@ -23,7 +23,7 @@ export function PostSmall({
   const dateParsed = parseISO(date);
 
   return (
-    <div className="m-12 p-10 rounded-lg bg-neutral-900/80">
+    <div className="m-16 p-10 rounded-lg bg-neutral-900/80">
       <div className="mb-5">
         <Link href={`/blog/${slug}`}>
         <Image src={coverImage} alt={title} width={650} height={315} className="object-contain w-full"></Image>

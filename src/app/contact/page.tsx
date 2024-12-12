@@ -1,6 +1,36 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: "Contact | fxllencode.dev",
+  description:
+    "Get in contact with me here.",
+  keywords: [
+    "contact",
+    "fxllencode",
+    "fxllencode.dev",
+    "Ethan Webber",
+    "portfolio",
+    "blog",
+    "developer",
+    "photographer",
+    "student",
+    "aviation"
+  ],
+  openGraph: {
+    url: "https://fxllencode.dev/contact",
+    type: "website",
+    title: "Contact | fxllencode.dev",
+    description:
+      "Get in contact with me here.",
+
+  },
+  
+  alternates: {
+    canonical: "https://fxllencode.dev/contact"
+  }
+};
 export default function Page() {
   return (
     <div className="h-screen w-screen sm:bg-none text-white">

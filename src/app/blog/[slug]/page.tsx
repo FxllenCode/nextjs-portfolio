@@ -2,7 +2,9 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug, markdownToHtml } from "../../../lib/handler";
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata, ResolvingMetadata } from "next";
 import { parseISO, format } from "date-fns";
+
 
 
 
@@ -13,9 +15,56 @@ type Params = {
     };
   };
 
+  export async function generateMetadata({ params }: Params
+  ): Promise<Metadata> {
+    const post = getPostBySlug(params.slug);
+   
+    return {
+      title: `${post.title} | dminhvu`,
+      authors: [
+        {
+          name: "Ethan Webber"
+        }
+      ],
+      description: post.excerpt,
+      keywords: post.tags,
+      openGraph: {
+        title: `${post.title} | fxllencode.dev`,
+        description: post.excerpt,
+        type: "article",
+        url: `https://fxllencode.dev/${post.slug}`,
+        publishedTime: post.date,
+        authors: ["https://fxllencode.dev/about"],
+        tags: post.tags,
+        images: [
+          {
+            url: post.coverImage,
+            alt: post.title
+          }
+        ]
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@fxllencode",
+        creator: "@fxllencode",
+        title: `${post.title} | fxllencode.dev`,
+        description: post.excerpt,
+        images: [
+          {
+            url: post.coverImage,
+            alt: post.title
+          }
+        ]
+      },
+      alternates: {
+        canonical: `https://fxllencode.dev/${post.slug}`
+      }
+    };
+  }
+
 
   export default async function Post({ params }: Params) {
-    const post = getPostBySlug(params.slug);
+    const post  = getPostBySlug(params.slug);
     if (!post) {
       return notFound();
     }
