@@ -2,6 +2,41 @@ import Image from "next/image";
 import Link from "next/link";
 import CustomSend from "../components/CustomSend";
 import { GoArrowUpRight } from "react-icons/go";
+import { Metadata } from "next";
+
+
+
+
+export const metadata: Metadata = {
+  title: "Projects | fxllencode.dev",
+  description:
+    "Page of all of my projects!",
+  keywords: [
+    "projects",
+    "fxllencode",
+    "fxllencode.dev",
+    "Ethan Webber",
+    "portfolio",
+    "developer",
+    "photographer",
+    "student",
+    "aviation"
+  ],
+  openGraph: {
+    url: "https://fxllencode.dev/projects",
+    type: "website",
+    title: "Projects | fxllencode.dev",
+    description:
+      "Page of all of my projects!",
+
+  },
+  
+  alternates: {
+    canonical: "https://fxllencode.dev/projects"
+  }
+};
+
+
 
 export default function Projects() {
   return (

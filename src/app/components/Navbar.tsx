@@ -36,9 +36,9 @@ const Navbar = () => {
               <Link href="/blog" passHref>
                 <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/blog' ? 'opacity-30' : ''}`}>Blog</p>
               </Link>
-              <Link href="/photography" passHref>
+              {/* <Link href="/photography" passHref>
                 <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/photography' ? 'opacity-30' : ''}`}>Photography</p>
-              </Link>
+              </Link> */}
               <Link href="/contact" passHref>
                 <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/contact' ? 'opacity-30' : ''}`}>Contact</p>
               </Link>
@@ -72,9 +72,9 @@ const Navbar = () => {
             <Link href="/blog" passHref>
               <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/blog' ? 'opacity-30' : ''}`}>Blog</p>
             </Link>
-            <Link href="/photography" passHref>
+            {/* <Link href="/photography" passHref>
               <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/photography' ? 'opacity-30' : ''}`}>Photography</p>
-            </Link>
+            </Link> */}
             <Link href="/contact" passHref>
               <p className={`text-l font-medium transition ease-in-out py-1 px-1 rounded hover:bg-white hover:text-black ${pathName === '/contact' ? 'opacity-30' : ''}`}>Contact</p>
             </Link>

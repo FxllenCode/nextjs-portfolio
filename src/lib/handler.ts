@@ -36,8 +36,7 @@ export function getAllPosts(): Post[] {
   return posts;
 }
 
-export async function markdownToHtml(markdown: string): Promise<string> { // might not be needed - check typography docs
+export async function markdownToHtml(markdown: string): Promise<string> { // refactor for the 3rd time!
   const result = await unified().use(remarkParse).use(remarkRehype, { allowDangerousHtml: true }).use(rehypeRaw).use(rehypePrettyCode).use(rehypeStringify).process(markdown);
-  console.log(result.toString());
   return result.toString();
 }

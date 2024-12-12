@@ -44,7 +44,7 @@ export default function Page() {
           <h1 className="text-3xl lg:text-4xl font-bold mb-4">About Me</h1>
           <div className="text-md lg:text-lg whitespace-pre-line">Hello! I&apos;m Ethan, but you may know me by fallen or FxllenCode. I create things for the internet that are sometimes cool, but mostly useless for anyone other than myself! I&apos;m fluent in JavaScript, TypeScript, HTML, and CSS. I&apos;m proficent in Rust, Lua, Java, and Python. I have extensive experience working with Node.js, Express.js, Next.Js, and React apps, but I have worked with many other industry standard tools as well. 
           {"\n\n"}
-          Aside from development, I am a student pilot with 21.3 flight hours and currently working towards my solo flight. I&apos;m a hobbist photograper, and I especially enjoy aviation photography. Every photo on my website is my own composition! I&apos;m also a student in high school.
+          Aside from development, I am a student pilot with 21.3 flight hours and currently working towards my solo flight. I&apos;m a photograper, and I especially enjoy aviation photography. Every photo on my website is my own composition! I&apos;m also a student in high school.
           </div>
 
           <span className="transition ease-in-out hover:underline font-bold text-lg lg:text-xl mt-5 text-blue-500 group">

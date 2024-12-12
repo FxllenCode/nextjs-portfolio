@@ -67,11 +67,11 @@ export default function About() {
             <p>Blog</p>
           </button>
           </Link>
-          <Link href="/photography">
+          {/* <Link href="/photography">
           <button className="transition ease-in-out font-bold text-white py-2 px-4 rounded hover:bg-white hover:text-black">
             <p>Photography</p>
           </button>
-          </Link>
+          </Link> */}
           <Link href="/contact">
           <button className="transition ease-in-out font-bold text-white py-2 px-4 rounded hover:bg-white hover:text-black">
             <p>Contact</p>
