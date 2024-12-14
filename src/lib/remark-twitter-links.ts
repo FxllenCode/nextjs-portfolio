@@ -1,6 +1,7 @@
 import { Node } from 'unist';
 import { visit } from 'unist-util-visit';
 
+//@ts-ignore
 function remarkTwitterLinks() {
   return (tree: Node) => {
     visit(tree, 'link', (node: any) => {
