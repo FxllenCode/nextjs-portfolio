@@ -63,7 +63,6 @@ export async function markdownToHtml(markdown: string): Promise<JSX.Element> { /
   const result = await unified()
     .use(remarkParse)
     .use(remarkTwitterLinks)
-    .use(remarkYoutube)
     .use(remarkGfm)
     .use(remarkVideos)
     .use(remarkRehype, { allowDangerousHtml: true })

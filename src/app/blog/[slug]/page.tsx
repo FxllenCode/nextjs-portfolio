@@ -74,30 +74,26 @@ type Params = {
 
   
     return (
-      <main className="bg-zinc-800 w-full h-full" >
-        <div className="container flex items-center justify-center mx-auto">
-            <article className="mb-32 mx-4">
+      <main className="bg-zinc-800 w-full h-full">
+        <div className="container flex items-center justify-center mx-auto px-4 sm:px-6 lg:px-8">
+            <article className="mb-32 mx-4 max-w-full">
               <h1 className="pt-32 text-4xl md:text-6xl lg:text-7xl font-bold font-black tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">{post.title}</h1>
               <i className="text-md mt-4 text-center md:text-left mb-4"><time dateTime={post.date}>{format(dateParsed, "LLLL	d, yyyy")}</time></i>
               <Image
-                className="rounded"
+                className="rounded max-w-full"
                 src={post.coverImage}
                 alt={`Cover Image for ${post.title}`}
                 width={1300}
                 height={630}
-    />
-              <div className="prose prose-zinc prose-invert lg:prose-xl mx-auto">
+              />
+              <div className="prose prose-zinc prose-invert lg:prose-xl mx-auto max-w-full">
                 {content}
-
               </div>
-
             </article>
           </div>
       </main>
     );
-  }
-
-
+}
   export async function generateStaticParams() {
     const posts = getAllPosts();
   
