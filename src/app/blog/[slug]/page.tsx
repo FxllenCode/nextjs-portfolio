@@ -74,7 +74,7 @@ type Params = {
 
   
     return (
-      <main className="bg-zinc-800 w-full h-full">
+      <main className="bg-zinc-800 w-full h-full" >
         <div className="container flex items-center justify-center mx-auto">
             <article className="mb-32 mx-4">
               <h1 className="pt-32 text-4xl md:text-6xl lg:text-7xl font-bold font-black tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">{post.title}</h1>
@@ -87,7 +87,7 @@ type Params = {
                 height={630}
     />
               <div className="prose prose-zinc prose-invert lg:prose-xl mx-auto">
-                <div dangerouslySetInnerHTML={{ __html: content }}/> {/* :sob: */}
+                {content}
 
               </div>
 
