@@ -20,7 +20,7 @@ type Params = {
     const post = getPostBySlug(params.slug);
    
     return {
-      title: `${post.title} | dminhvu`,
+      title: `${post.title} | fxllencode.dev`,
       authors: [
         {
           name: "Ethan Webber"
